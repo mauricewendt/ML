@@ -310,7 +310,9 @@ public class AdvancedValidation {
 			for(Instance instance : test) {
 				wekaClassifier.buildClassifier(train);
 				double myClass = classifier.classifyInstance(instance);
+				System.out.println(myClass);
 				double wekaClass = wekaClassifier.classifyInstance(instance);
+				System.out.println(wekaClass);
 				assertEquals("Instance: ["+instance.toString()+"] classified differently: ",wekaClass,myClass,0);
 			}
 		}
